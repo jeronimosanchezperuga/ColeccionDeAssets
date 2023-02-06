@@ -12,31 +12,25 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove;
     bool jump = false;
     bool crouch = false;
-    public bool onStair = false;
-    public float stairX;
-    [SerializeField]
-    private float stairSpeed;
-    public float minY;
-    public float maxY;
-
+    [SerializeField] Animator anim;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        float verticalMove = Input.GetAxis("Vertical") * stairSpeed;
 
-
+        anim.SetFloat("Speed",Mathf.Abs(horizontalMove));
 
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            anim.SetBool("IsJumping", true);
         }
 
         if (Input.GetButtonDown("Crouch"))
@@ -47,9 +41,17 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
-
         
     } 
+
+    public void OnLanding()
+    {
+        anim.SetBool("IsJumping",false);
+    }
+    public void OnCrouching(bool isCrouching)
+    {
+        anim.SetBool("IsCrouching",isCrouching);
+    }
 
     void FixedUpdate()
     {

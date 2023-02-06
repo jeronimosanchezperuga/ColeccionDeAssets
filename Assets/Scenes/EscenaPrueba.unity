@@ -170,10 +170,32 @@ MonoBehaviour:
   m_Grounded: 0
   OnLandEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164071151}
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCrouchEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 164071151}
+        m_MethodName: OnCrouching
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &164071148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 330320887286316151, guid: f276ad961924d8c4685da324fcaabf79,
@@ -237,11 +259,7 @@ MonoBehaviour:
   characterController: {fileID: 164071145}
   rb: {fileID: 164071144}
   runSpeed: 40
-  onStair: 0
-  stairX: 0
-  stairSpeed: 0
-  minY: 0
-  maxY: 0
+  anim: {fileID: 0}
 --- !u!1 &426142487
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654041233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.25, y: 1.17, z: 0}
+  m_LocalPosition: {x: -7.25, y: 0.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
