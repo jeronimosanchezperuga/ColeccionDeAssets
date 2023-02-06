@@ -1,0 +1,21 @@
+1. Player camina izq y der y salta. (anim ok)
+2. Ataca: espadazo
+.gameobject que se activa un par de frames DONE
+3. Enemigos:
+a. Ojo flotante
+. Al tocarte te hace daño DONE
+. Muere a espadazos (varios) DONE
+. Flota por las plataformas persiguiendo al player que debe esquivarlo DONE
+. Si lo esquivas sigue de largo y luego vuelve hacia vos DONE
+.. setear un target adicional por encima o debajo y detrás (pasando) al player. 
+.. cómo detectar que el player lo esquivó? 
+... chequear de qué lado de x se encuentra y si el lado cambia es que lo esquivaron
+AL pegarle el ojo retrocede. DONE
+4. Respawn de player
+
+
+Primer nivel: tutorial y ejercitamos el salto para evitar los pozos de pinchos a través de plataformas.
+Seguindo nivel: le pegamos a unos árboles que no nos dejan pasar
+Tercer nivel: contra el enemigo OJO todo el piso son pinchos y lo esquivamos saltando por las plataformas.
+Cuarto nivel: entramos en una cabaña y salimos con el pato.
+
