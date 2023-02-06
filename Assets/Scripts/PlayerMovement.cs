@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    CharacterController2D characterController;
-    [SerializeField]
-    Rigidbody2D rb;
+    [SerializeField] CharacterController2D characterController;
+    [SerializeField] Rigidbody2D rb;
     public float runSpeed = 40f;
     float horizontalMove;
     bool jump = false;
     bool crouch = false;
     [SerializeField] Animator anim;
 
-    // Start is called before the first frame update
     void Awake()
     {
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
@@ -40,8 +36,7 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetButtonUp("Crouch"))
         {
             crouch = false;
-        }
-        
+        }           
     } 
 
     public void OnLanding()
