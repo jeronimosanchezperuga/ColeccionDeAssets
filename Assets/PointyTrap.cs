@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpItem : MonoBehaviour
+public class PointyTrap : MonoBehaviour
 {
     [SerializeField] int prizeAmount;
     [SerializeField] GameObject fxFeedback;
@@ -10,26 +10,31 @@ public class PickUpItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            AffectPlayer(collision.gameObject);
             PickedUpBehavior();
         }
     }
 
     void PickedUpBehavior()
     {
-        Destroy(gameObject);
-        Instantiate(fxFeedback,gameObject.transform.position,Quaternion.identity);
-    }    
+        Instantiate(fxFeedback, gameObject.transform.position, Quaternion.identity);
+    }
+
+    void AffectPlayer(GameObject playerGO)
+    {
+        playerGO.GetComponent<PlayerBlink>().Blink();
+    }
 }
