@@ -36,5 +36,6 @@ public class PointyTrap : MonoBehaviour
     void AffectPlayer(GameObject playerGO)
     {
         playerGO.GetComponent<PlayerBlink>().Blink();
+        playerGO.GetComponent<KnockBack>().ActivateKnockBack(transform);
     }
 }
