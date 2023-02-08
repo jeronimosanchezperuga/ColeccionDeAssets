@@ -26,7 +26,7 @@ public class PlayerBlink : MonoBehaviour
     public void Blink()
     {
         Invoke("EnableBlink", 0);
-        Invoke("DisableBlink", 0.1f);
+        Invoke("DisableBlink", 0.2f);
     }
 
     void EnableBlink()
