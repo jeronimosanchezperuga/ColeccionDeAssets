@@ -24,13 +24,14 @@ public class PointyTrap : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             AffectPlayer(collision.gameObject);
-            PickedUpBehavior();
+            Vector2 point = collision.GetContact(0).point;
+            PickedUpBehavior(point);
         }
     }
 
-    void PickedUpBehavior()
+    void PickedUpBehavior(Vector2 hitPoint)
     {
-        Instantiate(fxFeedback, gameObject.transform.position, Quaternion.identity);
+        Instantiate(fxFeedback, new Vector3(hitPoint.x, hitPoint.y, 0), Quaternion.identity);
     }
 
     void AffectPlayer(GameObject playerGO)
